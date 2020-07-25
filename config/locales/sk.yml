@@ -1,0 +1,12 @@
+sk:
+  label_http_integration: HTTP Integrácia
+  field_http_integration_url: URL
+  text_http_integration_available_macros: "Dostupné makrá: %{macros}"
+  field_http_integration_request_method: Metóda požiadavky
+  field_http_integration_custom_headers: HTTP hlavičky
+  text_http_integration_custom_headers_info: "Hlavičky oddelné pajpou (príklad: X-Header-A: DataA | X-Header-B: DataBA, DataBB | ...)."
+  field_http_integration_ignore_ssl_verification: Ignorovať SSL overovanie
+  field_http_integration_include_api_updates: Zahrnúť aktualizácie cez API
+  project_module_http_integration: HTTP Integrácia
+  permission_http_integration_settings: HTTP Integrácia
+  error_update_not_successful: Nepodarilo sa aktualizovať nastavenia projektu

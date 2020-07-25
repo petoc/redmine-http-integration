@@ -1,0 +1,12 @@
+en:
+  label_http_integration: HTTP Integration
+  field_http_integration_url: URL
+  text_http_integration_available_macros: "Available macros: %{macros}"
+  field_http_integration_request_method: Request method
+  field_http_integration_custom_headers: HTTP headers
+  text_http_integration_custom_headers_info: "Headers separated with pipe (i.e: X-Header-A: DataA | X-Header-B: DataBA, DataBB | ...)."
+  field_http_integration_ignore_ssl_verification: Ignore SSL verification
+  field_http_integration_include_api_updates: Include API updates
+  project_module_http_integration: HTTP Integration
+  permission_http_integration_settings: HTTP Integration
+  error_update_not_successful: Unable to update project settings

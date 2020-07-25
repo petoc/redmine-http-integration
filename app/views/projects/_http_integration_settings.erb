@@ -1,0 +1,29 @@
+<% object = HttpIntegrationSetting.for_project(@project) %>
+<% available_macros = HttpIntegration.available_macros() %>
+<%= form_for @project, :url => {:action => 'http_integration_settings', :id => @project}, :html => {:id => 'http_integration_settings-form', :method => :post} do |f| %>
+  <div class="box tabular">
+    <p>
+      <label for="http_integration_url"><%= l(:field_http_integration_url) %><span class="required"> *</span></label>
+      <%= text_field_tag :http_integration_url, object.url, :required => true, :size => 100 %>
+      <em class="info"><%= l(:text_http_integration_available_macros, :macros => available_macros) %></em>
+    </p>
+    <p>
+      <%= label_tag :http_integration_custom_headers, l(:field_http_integration_custom_headers) %>
+      <%= text_field_tag :http_integration_custom_headers, object.custom_headers, :size => 100 %>
+      <em class="info"><%= l(:text_http_integration_custom_headers_info) %><br/><%= l(:text_http_integration_available_macros, :macros => available_macros) %></em>
+    </p>
+    <p>
+      <%= label_tag :http_integration_request_method, l(:field_http_integration_request_method) %>
+      <%= select_tag :http_integration_request_method, options_for_select(HttpIntegration.request_methods(), object.request_method) %>
+    </p>
+    <p>
+      <%= label_tag :http_integration_ignore_ssl_verification, l(:field_http_integration_ignore_ssl_verification) %>
+      <%= check_box_tag :http_integration_ignore_ssl_verification, 1, object.ignore_ssl_verification? %>
+    </p>
+    <p>
+      <%= label_tag :http_integration_include_api_updates, l(:field_http_integration_include_api_updates) %>
+      <%= check_box_tag :http_integration_include_api_updates, 1, object.include_api_updates? %>
+    </p>
+  </div>
+  <p><%= submit_tag l(:button_save) %></p>
+<% end %>
