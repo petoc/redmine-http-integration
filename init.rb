@@ -1,5 +1,5 @@
 require 'redmine'
-require 'http_integration'
+require File.dirname(__FILE__) + '/lib/http_integration'
 
 Redmine::Plugin.register :http_integration do
   name 'HTTP Integration'
@@ -12,13 +12,12 @@ Redmine::Plugin.register :http_integration do
   end
 end
 
-Rails.configuration.to_prepare do
-  [
-    [ProjectsController, HttpIntegration::Patches::ProjectsControllerPatch],
-    [ProjectsHelper, HttpIntegration::Patches::ProjectsHelperPatch],
-  ].each do |classname, modulename|
-    unless classname.included_modules.include?(modulename)
-      classname.send(:include, modulename)
-    end
+if Rails.version > '6.0' && Rails.autoloaders.zeitwerk_enabled?
+  Rails.application.config.after_initialize do
+    HttpIntegration.apply_patches
+  end
+else
+  Rails.configuration.to_prepare do
+    HttpIntegration.apply_patches
   end
 end

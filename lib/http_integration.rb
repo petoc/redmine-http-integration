@@ -1,7 +1,7 @@
 require 'net/https'
 require 'uri'
 require 'json'
-require 'http_integration/hooks/issues_edit_hook'
+require File.dirname(__FILE__) + '/http_integration/hooks/issues_edit_hook'
 
 module HttpIntegration
   REQUEST_METHOD_POST = 1
@@ -77,6 +77,16 @@ module HttpIntegration
       rescue StandardError => e
         Rails.logger.error("HTTP_INTEGRATION_PLUGIN: error: " + e.message)
         Thread.current.exit
+      end
+    end
+  end
+  def self.apply_patches
+    [
+      [ProjectsController, HttpIntegration::Patches::ProjectsControllerPatch],
+      [ProjectsHelper, HttpIntegration::Patches::ProjectsHelperPatch],
+    ].each do |classname, modulename|
+      unless classname.included_modules.include?(modulename)
+        classname.send(:include, modulename)
       end
     end
   end

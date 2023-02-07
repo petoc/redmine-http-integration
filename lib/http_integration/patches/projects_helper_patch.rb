@@ -8,7 +8,7 @@ module HttpIntegration
         if User.current.allowed_to?(:http_integration_settings, @project)
           tabs.push({
             :name => 'http_integration_settings',
-            :action => :http_integration_project_settings,
+            :action => :http_integration_settings,
             :partial => 'projects/http_integration_settings',
             :label => 'label_http_integration'
           })
