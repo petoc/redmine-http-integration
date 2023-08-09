@@ -4,7 +4,7 @@ require File.dirname(__FILE__) + '/lib/http_integration'
 Redmine::Plugin.register :http_integration do
   name 'HTTP Integration'
   author 'Peter C.'
-  description 'Sending notifications about issue updates to external URL.'
+  description 'Issue update notifications to external URL.'
   version 'master'
   requires_redmine :version_or_higher => '2.3.0'
   project_module :http_integration do

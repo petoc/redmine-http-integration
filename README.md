@@ -1,8 +1,8 @@
 # Redmine HTTP integration
 
-Plugin for sending notifications about issue updates to external URL.
+Issue update notifications to external URL.
 
-![screenshot](https://raw.github.com/petoc/redmine-http-integration/master/screenshot.png)
+![screenshot](screenshot.png)
 
 ## Features
 
@@ -16,13 +16,13 @@ Plugin for sending notifications about issue updates to external URL.
 
 Tested with Redmine deployments in table below.
 
-| Redmine       | Ruby       | Rails    |
-|---------------|------------|----------|
-| 5.0.4.stable  | 3.1.3-p185 | 6.1.7    |
-| 4.1.1.stable  | 2.6.6-p146 | 5.2.4.2  |
-| 3.4.13.stable | 2.4.9-p362 | 4.2.11.1 |
-| 2.6.10.stable | 2.2.5-p319 | 3.2.22.2 |
-| 2.3.0.stable  | 1.8.7      | 3.2.13   |
+| Redmine       | Ruby        | Rails    |
+|---------------|-------------|----------|
+| 5.0.5.stable  | 3.1.4-p223  | 6.1.7.2  |
+| 4.2.10.stable | 2.7.8-p225  | 5.2.8.1  |
+| 3.4.13.stable | 2.4.10-p364 | 4.2.11.1 |
+| 2.6.10.stable | 2.2.5-p319  | 3.2.22.2 |
+| 2.3.0.stable  | 1.8.7       | 3.2.13   |
 
 ## Setup
 
