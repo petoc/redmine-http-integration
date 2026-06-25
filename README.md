@@ -18,7 +18,8 @@ Tested with Redmine deployments in table below.
 
 | Redmine       | Ruby        | Rails    |
 |---------------|-------------|----------|
-| 5.1.2.stable  | 3.2.4-p170  | 6.1.7.7  |
+| 6.1.3.stable  | 3.4.9-p82   | 7.2.3.1  |
+| 5.1.12.stable | 3.2.11-p268 | 6.1.7.10 |
 | 4.2.10.stable | 2.7.8-p225  | 5.2.8.1  |
 | 3.4.13.stable | 2.4.10-p364 | 4.2.11.1 |
 | 2.6.10.stable | 2.2.5-p319  | 3.2.22.2 |
@@ -37,7 +38,7 @@ Only individual issue updates are processed. To provide same functionality for b
 ```diff
 --- a/app/controllers/issues_controller.rb
 +++ b/app/controllers/issues_controller.rb
-@@ -323,6 +323,7 @@
+@@ -403,6 +403,7 @@
        call_hook(:controller_issues_bulk_edit_before_save, { :params => params, :issue => issue })
        if issue.save
          saved_issues << issue
@@ -47,7 +48,8 @@ Only individual issue updates are processed. To provide same functionality for b
        end
 ```
 
-Note: Line numbers from patch above may be different across Redmine versions.
+> [!NOTE]
+> Line numbers from patch above may be different across Redmine versions.
 
 ## License
 
