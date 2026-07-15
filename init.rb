@@ -1,5 +1,6 @@
 require 'redmine'
 require File.dirname(__FILE__) + '/lib/http_integration'
+require File.dirname(__FILE__) + '/app/jobs/http_integration_job'
 
 Redmine::Plugin.register :http_integration do
   name 'HTTP Integration'
