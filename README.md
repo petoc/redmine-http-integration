@@ -18,6 +18,7 @@ Tested with Redmine deployments in table below.
 
 | Redmine       | Ruby        | Rails    |
 |---------------|-------------|----------|
+| 7.0.0.stable  | 4.0.6-p0    | 8.1.3    |
 | 6.1.3.stable  | 3.4.9-p82   | 7.2.3.1  |
 | 5.1.12.stable | 3.2.11-p268 | 6.1.7.10 |
 | 4.2.10.stable | 2.7.8-p225  | 5.2.8.1  |
