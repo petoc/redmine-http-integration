@@ -60,7 +60,7 @@ class HttpIntegrationJob < HttpIntegrationJobBase
       response = http.start do |http|
         http.request(request)
       end
-      Rails.logger.debug('HttpIntegration: response ' + response.body)
+      Rails.logger.debug('HttpIntegration: response ' + response.body.to_s)
     rescue StandardError => e
       Rails.logger.error('HttpIntegration: error ' + e.message)
     end
