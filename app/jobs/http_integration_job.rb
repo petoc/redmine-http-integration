@@ -2,12 +2,7 @@ require 'net/https'
 require 'uri'
 require 'json'
 
-class HttpIntegrationJobBase
-end
-
-if defined?(ActiveJob::Base)
-  HttpIntegrationJobBase = ActiveJob::Base
-end
+HttpIntegrationJobBase = defined?(ActiveJob::Base) ? ActiveJob::Base : Class.new
 
 class HttpIntegrationJob < HttpIntegrationJobBase
   def perform(settings, issue, journal)
